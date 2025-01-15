@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: 18
 
-    - name: Set Node.js options
+    - name: Set Node.js options for OpenSSL compatibility
       run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
 
     - name: Install dependencies
