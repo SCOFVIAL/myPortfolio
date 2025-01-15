@@ -14,8 +14,7 @@ const Hero = (props) => (
       I'm Victor
     </SectionTitle>
     <SectionText>
-I am an aspiring individual with an unwavering enthusiasm for technology and a deep passion for software development. Currently studying Computer Science at Babcock University, I am fully immersed in the dynamic world of coding and constantly seeking opportunities to enhance my skills and knowledge.
-    </SectionText>
+    I am an aspiring software developer passionate about technology. Currently pursuing a Computer Science degree at Babcock University, I am focused on coding and developing skills in networking, cybersecurity, and software development. My enthusiasm drives me to explore innovative solutions and contribute to tech projects that push boundaries.</SectionText>
     <Button>
       <Link href="#about">About</Link>
     </Button>

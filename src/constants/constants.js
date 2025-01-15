@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 export const projects = [
   {
-    title: 'Microsoft Packages',
-    description: "Skilled in Microsoft packages, with hands-on experience and dedication to staying updated. Deep understanding and mastery for enhanced software utilization.",
-    image: '/images/My project (6).png',
-    tags: ['Excel', 'Power Point', 'Word'],
+    title: 'Cybersecurity Fundamentals',
+    description: "Skilled in securing networks, systems, and data with a strong understanding of core security principles. Passionate about identifying vulnerabilities and implementing measures to protect sensitive information.",
+    image: '/images/cyb2.jpg',
+    tags: ['Network Security', 'Risk Management', 'Firewalls'],
     source: 'https://google.com',
     visit: 'https://google.com',
     id: 3,
@@ -22,7 +22,7 @@ export const projects = [
     title: 'Web Development',
     description: "I excel in crafting scalable websites using cutting-edge tech, hands-on expertise, load balancing, cloud integration, and continuous optimization.",
     image: '/images/My project (7).png',
-    tags: ['HTML 5', 'CSS 3', 'Node Js'],
+    tags: ['HTML 5', 'CSS 3', 'Javascript'],
     source: 'https://google.com',
     visit: 'https://google.com',
     id: 3,
@@ -39,8 +39,9 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2020, text: 'Started my journey', },
-  { year: 2021, text: 'Got my first certificate in web programming', },
-  { year: 2022, text: 'Started Studying Computer Science at Babcock University', },
-  { year: 2023, text: 'Participated in Campus Hackathon', },
+  { year: 2020, text: 'Started my Tech journey', },
+  { year: 2021, text: 'Earned my first certificate in web programming', },
+  { year: 2022, text: 'Began my Computer Science studies at Babcock University', },
+  { year: 2023, text: 'Volunteered at GDG Babcock University', },
+  { year: 2024, text: 'Achieved Cisco Junior Cybersecurity Analyst Certification', },
 ];

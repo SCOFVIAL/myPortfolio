@@ -8,39 +8,43 @@ const Technologies = () =>  (
     <SectionDivider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-    I've worked with a range of technologies in Web Development, Python and JavaScript
+    I’ve worked with a wide range of technologies across multiple domains, including:
     </SectionText>
     <List>
       <ListItem>
         <DiFirebase size="3rem" />
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>Web Development</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            React.js <br />
-            Next.js <br />
+            • HTML5 <br />
+            • CSS3 <br />
+            • Node.js <br />
+            • React.js <br />
+            • Next.js <br />
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      
+      <ListItem>
+        <DiFirebase size="3rem" />
+        <ListContainer>
+          <ListTitle>System Administration</ListTitle>
+          <ListParagraph>
+            • Microsoft Windows <br />
+            • MacOS <br />
+            • Linux <br />
+            
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
         <DiFirebase size="3rem" />
         <ListContainer>
-          <ListTitle>Back-End</ListTitle>
+          <ListTitle>Networking & Cybersecurity</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Node and Databases
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiFirebase size="3rem" />
-        <ListContainer>
-          <ListTitle>Languages</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            C++ <br />
-            Python <br />
-            JavaScript <br />
+            • Cisco Network Security <br />
+            • Firewalls <br />
+            • Risk Management <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>

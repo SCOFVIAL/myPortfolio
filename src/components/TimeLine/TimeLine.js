@@ -46,7 +46,7 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        I am a hard-working, passionate and driven individual. I want to work in a field that has the potential for me to excel and learn new skills while gaining valuable experience. It is my objective to obtain a position in which I can fully utilize the knowledge, training and Customer Service abilities gained through school and my work experiences in order to benefit both myself and those around me as well as being a positive asset within a team and company.
+      I am a dedicated, enthusiastic individual with a passion for software development and technology. My goal is to leverage the knowledge, skills, and experience I’m gaining to grow in my career and positively impact the teams and projects I'm involved in. I thrive in environments that challenge me and offer opportunities for continuous learning and improvement.
         </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}> 
         <>
