@@ -20,12 +20,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        export NODE_OPTIONS=--openssl-legacy-provider  # Set OpenSSL legacy provider here
+        export NODE_OPTIONS=--openssl-legacy-provider  # Set OpenSSL legacy provider for this step
         npm install
 
     - name: Build the app
       run: |
-        export NODE_OPTIONS=--openssl-legacy-provider  # Ensure this is set again before building
+        export NODE_OPTIONS=--openssl-legacy-provider  # Ensure NODE_OPTIONS is set again before building
         npm run build
         # You can add any build commands like `next build` for Next.js
 
