@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -16,24 +16,22 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Or '14', depending on your preference
-
-    - name: Set NODE_OPTIONS for OpenSSL compatibility
-      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+        node-version: '16'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install
+        export NODE_OPTIONS=--openssl-legacy-provider
 
     - name: Build the app
       run: |
         npm run build
-        # You can add any build commands like `next build` for Next.js
 
     - name: Deploy to Azure Static Web Apps
-      uses: azure/static-web-apps-deploy-action@v1
+      uses: Azure/static-web-apps-deploy@v0  # Changed version
       with:
         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
         action: "upload"
-        app_location: "/"  # Location of your app's source code
-        api_location: ""   # Leave empty if you don't have an API
-        output_location: "out"  # Folder for the built output (Next.js, React, etc.)
+        app_location: "/"
+        api_location: ""
+        output_location: "out"
