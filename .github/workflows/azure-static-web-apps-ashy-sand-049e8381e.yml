@@ -10,29 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # You can change this to your preferred version
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Or '14', depending on your preference
 
-      - name: Install dependencies
-        run: |
-          npm install
-          # Add OpenSSL legacy provider for compatibility
-          export NODE_OPTIONS=--openssl-legacy-provider
+    - name: Install dependencies
+      run: |
+        export NODE_OPTIONS=--openssl-legacy-provider  # Set OpenSSL legacy provider here
+        npm install
 
-      - name: Build the app
-        run: |
-          npm run build
+    - name: Build the app
+      run: |
+        export NODE_OPTIONS=--openssl-legacy-provider  # Ensure this is set again before building
+        npm run build
+        # You can add any build commands like `next build` for Next.js
 
-      - name: Deploy to Azure Static Web Apps
-        uses: azure/static-web-apps-deploy-action@v1.0.0
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "upload"
-          app_location: "/"  # Set this to your app's source location (e.g., '/' or 'src')
-          api_location: ""   # Leave empty if you don't have an API
-          output_location: "out"  # Set this to the folder where your build output resides (e.g., 'out', 'build', 'dist')
+    - name: Deploy to Azure Static Web Apps
+      uses: azure/static-web-apps-deploy-action@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+        action: "upload"
+        app_location: "/"  # Location of your app's source code
+        api_location: ""   # Leave empty if you don't have an API
+        output_location: "out"  # Folder for the built output (Next.js, React, etc.)
