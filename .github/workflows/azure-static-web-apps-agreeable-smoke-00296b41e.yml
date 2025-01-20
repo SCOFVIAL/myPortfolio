@@ -1,43 +1,32 @@
-name: Build and Deploy to Azure Static Web App
+name: Azure Static Web Apps CI/CD
 
 on:
   push:
     branches:
-      - main  # Trigger deployment on pushes to the main branch
+      - main
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
-
     steps:
-    # Checkout the code from the repository
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Use the latest version
 
-    # Set the NODE_OPTIONS to handle the OpenSSL issue
-    - name: Set NODE_OPTIONS
-      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+      - name: Set up Node.js
+        uses: actions/setup-node@v3  # Use the latest version
+        with:
+          node-version: '14'
 
-    # Set up Node.js (ensure your version matches)
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'  # Use Node 18 (you can specify a version if needed)
+      - name: Install dependencies
+        run: npm install
 
-    # Install project dependencies
-    - name: Install dependencies
-      run: yarn install --prefer-offline
+      - name: Build project
+        run: npm run build
 
-    # Build the app
-    - name: Build the app
-      run: yarn run build  # Make sure 'build' script is defined in your package.json
-
-    # Deploy to Azure Static Web Apps
-    - name: Deploy to Azure Static Web Apps
-      uses: Azure/static-web-apps-deploy@v1
-      with:
-        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-        action: "upload"
-        app_location: "/"
-        api_location: ""   # Leave empty if you don’t have an API folder
-        output_location: "build"  # Adjust according to your build folder
+      - name: Deploy to Azure Static Web Apps
+        uses: azure/static-web-apps-deploy-action@v1  # Correct action reference
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          # Add any other inputs you need
