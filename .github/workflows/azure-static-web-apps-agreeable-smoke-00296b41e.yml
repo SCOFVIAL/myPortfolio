@@ -8,8 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: --openssl-legacy-provider  # Set environment variable for Node.js
+    # env:
+    #   NODE_OPTIONS: --openssl-legacy-provider  # Set environment variable for Node.js
 
     steps:
     # Step 1: Checkout the repository code
