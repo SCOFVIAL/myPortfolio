@@ -1,1 +1,1 @@
-My portfolio website built on react and next.js
+My portfolio website built with react and next.js
