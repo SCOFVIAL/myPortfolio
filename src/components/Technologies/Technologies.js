@@ -18,9 +18,7 @@ const Technologies = () =>  (
           <ListParagraph>
             • HTML5 <br />
             • CSS3 <br />
-            • Node.js <br />
-            • React.js <br />
-            • Next.js <br />
+            • Javascript <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -42,8 +40,8 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>Networking & Cybersecurity</ListTitle>
           <ListParagraph>
+            • Networking Basics <br />
             • Cisco Network Security <br />
-            • Firewalls <br />
             • Risk Management <br />
           </ListParagraph>
         </ListContainer>
