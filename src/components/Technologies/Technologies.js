@@ -28,7 +28,7 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>System Administration</ListTitle>
           <ListParagraph>
-            • Microsoft Windows <br />
+            • Windows <br />
             • MacOS <br />
             • Linux <br />
             
